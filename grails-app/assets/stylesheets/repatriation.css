@@ -1,0 +1,14 @@
+
+
+.float-left {
+    float: left;
+}
+.display-none {
+    display: none;
+}
+
+.alert-container {
+    clear: left ;
+    margin-right:0;
+    margin-bottom: 2px;
+}

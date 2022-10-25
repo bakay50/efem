@@ -1,0 +1,437 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ACExchange" language="groovy" pageWidth="595" pageHeight="842" columnWidth="556" leftMargin="19" rightMargin="20" topMargin="19" bottomMargin="19" uuid="4b4688a3-1e7e-42c1-9d98-0b3bba911f62">
+	<property name="ireport.zoom" value="1.9965000000000854"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="471"/>
+	<parameter name="TITLE" class="java.io.InputStream"/>
+	<parameter name="language" class="java.lang.String"/>
+	<parameter name="draft" class="java.io.InputStream"/>
+	<parameter name="executions" class="java.util.Collection"/>
+	<parameter name="EXECUTIONS_SUBREPORT" class="java.lang.Object"/>
+	<parameter name="piecejointe" class="java.lang.String"/>
+	<parameter name="enlettre" class="java.lang.String"/>
+	<parameter name="creditCorrespentAccount" class="java.lang.String"/>
+	<parameter name="creditForeignAccountCfaOrEuro" class="java.lang.String"/>
+	<parameter name="accountOwnerCredited" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="executions" class="java.util.Collection"/>
+	<field name="requestNo" class="java.lang.String"/>
+	<field name="requestDate" class="org.joda.time.LocalDate"/>
+	<field name="tvfNumber" class="java.lang.Integer"/>
+	<field name="tvfDate" class="org.joda.time.LocalDate"/>
+	<field name="clearanceOfficeCode" class="java.lang.String"/>
+	<field name="clearanceOfficeName" class="java.lang.String"/>
+	<field name="declarationSerial" class="java.lang.String"/>
+	<field name="declarationNumber" class="java.lang.String"/>
+	<field name="declarationDate" class="org.joda.time.LocalDate"/>
+	<field name="bankCode" class="java.lang.String"/>
+	<field name="bankName" class="java.lang.String"/>
+	<field name="registrationNumberBank" class="java.lang.String"/>
+	<field name="registrationDateBank" class="org.joda.time.LocalDate"/>
+	<field name="domiciliationBankCode" class="java.lang.String"/>
+	<field name="domiciliationDate" class="org.joda.time.LocalDate"/>
+	<field name="domiciliationNumber" class="java.lang.String"/>
+	<field name="operType" class="java.lang.String"/>
+	<field name="currencyCode" class="java.lang.String"/>
+	<field name="amountMentionedCurrency" class="java.math.BigDecimal"/>
+	<field name="bankAccountNocreditedDebited" class="java.lang.String"/>
+	<field name="countryProvenanceDestinationCode" class="java.lang.String"/>
+	<field name="provenanceDestinationBank" class="java.lang.String"/>
+	<field name="comments" class="java.lang.String"/>
+	<field name="declarantCode" class="java.lang.String"/>
+	<field name="declarantNameAddress" class="java.lang.String"/>
+	<field name="exporterNameAddress" class="java.lang.String"/>
+	<field name="importerNameAddress" class="java.lang.String"/>
+	<field name="importerCode" class="java.lang.String"/>
+	<field name="basedOn" class="java.lang.String"/>
+	<field name="requestType" class="java.lang.String"/>
+	<field name="operTypeName" class="java.lang.String"/>
+	<field name="authorizedBy" class="java.lang.String"/>
+	<field name="approvalDate" class="org.joda.time.LocalDate"/>
+	<field name="beneficiaryNameAddress" class="java.lang.String"/>
+	<variable name="CURRENT_DATE" class="java.lang.String"/>
+	<title>
+		<band/>
+	</title>
+	<pageHeader>
+		<band height="64">
+			<image scaleImage="RealSize" hAlign="Left" isUsingCache="true" onErrorType="Blank">
+				<reportElement uuid="3876ca6a-4dba-4b30-b455-fe702babb91c" x="1" y="0" width="555" height="64"/>
+				<imageExpression><![CDATA[$P{TITLE}]]></imageExpression>
+			</image>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="433" splitType="Prevent">
+			<rectangle>
+				<reportElement uuid="d9d49afa-ad9a-4844-b9c4-e2fabb47e71b" mode="Transparent" x="326" y="0" width="230" height="58" backcolor="#FFFFFF"/>
+				<graphicElement>
+					<pen lineWidth="0.25" lineColor="#6D6E70"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement uuid="04b472cc-11c6-44bc-93e5-d50edd783845" x="0" y="58" width="556" height="105"/>
+				<box>
+					<topPen lineWidth="0.25" lineColor="#6D6E70"/>
+					<leftPen lineWidth="0.25" lineColor="#6D6E70"/>
+					<bottomPen lineWidth="0.25" lineColor="#6D6E70"/>
+					<rightPen lineWidth="0.25" lineColor="#6D6E70"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="04b472cc-11c6-44bc-93e5-d50edd783845" x="0" y="163" width="556" height="137"/>
+				<box>
+					<topPen lineWidth="0.25" lineColor="#6D6E70"/>
+					<leftPen lineWidth="0.25" lineColor="#6D6E70"/>
+					<bottomPen lineWidth="0.25" lineColor="#6D6E70"/>
+					<rightPen lineWidth="0.25" lineColor="#6D6E70"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="04b472cc-11c6-44bc-93e5-d50edd783845" x="0" y="300" width="556" height="126"/>
+				<box>
+					<topPen lineWidth="0.25" lineColor="#6D6E70"/>
+					<leftPen lineWidth="0.25" lineColor="#6D6E70"/>
+					<bottomPen lineWidth="0.25" lineColor="#6D6E70"/>
+					<rightPen lineWidth="0.25" lineColor="#6D6E70"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="800a6db5-8a14-46ea-a08c-c4dcb6d7ca63" x="0" y="57" width="556" height="14"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="true" pdfFontName="Helvetica-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[DEMANDEUR]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="800a6db5-8a14-46ea-a08c-c4dcb6d7ca63" x="1" y="163" width="556" height="14"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="true" pdfFontName="Helvetica-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[OPERATION]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="800a6db5-8a14-46ea-a08c-c4dcb6d7ca63" x="0" y="300" width="556" height="14"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8" isBold="true" pdfFontName="Helvetica-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[BÉNÉFICIAIRE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="741d6545-cee0-4f68-8684-179918019db3" x="5" y="5" width="104" height="9"/>
+				<textElement markup="styled">
+					<font fontName="SansSerif" size="7" isBold="true" pdfFontName="Helvetica-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[<style isBold='true'>Référence Enregistrement :</style>]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="741d6545-cee0-4f68-8684-179918019db3" x="5" y="24" width="104" height="9"/>
+				<textElement markup="styled">
+					<font fontName="SansSerif" size="7" isBold="true" pdfFontName="Helvetica-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[<style isBold='true'>Date Enregistrement:</style>]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="741d6545-cee0-4f68-8684-179918019db3" x="5" y="42" width="104" height="9"/>
+				<textElement markup="styled">
+					<font fontName="SansSerif" size="7" isBold="true" pdfFontName="Helvetica-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[<style isBold='true'>Intermédiaire agréé:</style>]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="741d6545-cee0-4f68-8684-179918019db3" x="330" y="5" width="88" height="9"/>
+				<textElement markup="styled">
+					<font fontName="SansSerif" size="7" isBold="true" pdfFontName="Helvetica-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[<style isBold='true'>Référence Demande:</style>]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="741d6545-cee0-4f68-8684-179918019db3" x="330" y="24" width="88" height="9"/>
+				<textElement markup="styled">
+					<font fontName="SansSerif" size="7" isBold="true" pdfFontName="Helvetica-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[<style isBold='true'>Date Demande:</style>]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="227c8ea7-5aef-49e8-a3c0-50574dcebb4f" x="5" y="75" width="269" height="59"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{importerNameAddress}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement uuid="d9d49afa-ad9a-4844-b9c4-e2fabb47e71b" mode="Transparent" x="0" y="0" width="326" height="58" backcolor="#FFFFFF"/>
+				<graphicElement>
+					<pen lineWidth="0.25" lineColor="#6D6E70"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement uuid="741d6545-cee0-4f68-8684-179918019db3" x="5" y="144" width="117" height="9"/>
+				<textElement markup="styled">
+					<font fontName="SansSerif" size="7" isBold="true" pdfFontName="Helvetica-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[<style isBold='true'>N° Compte à débiter chez l'IA:</style>]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="741d6545-cee0-4f68-8684-179918019db3" x="5" y="179" width="104" height="12"/>
+				<textElement markup="styled">
+					<font fontName="SansSerif" size="7" isBold="true" pdfFontName="Helvetica-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[<style isBold='true'>Nature Opération:</style>]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="741d6545-cee0-4f68-8684-179918019db3" x="6" y="193" width="103" height="12"/>
+				<textElement markup="styled">
+					<font fontName="SansSerif" size="7" isBold="true" pdfFontName="Helvetica-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[<style isBold='true'>Piécés Justificatives:</style>]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="741d6545-cee0-4f68-8684-179918019db3" x="6" y="212" width="103" height="12"/>
+				<textElement markup="styled">
+					<font fontName="SansSerif" size="7" isBold="true" pdfFontName="Helvetica-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[<style isBold='true'>Devise:</style>]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="741d6545-cee0-4f68-8684-179918019db3" x="6" y="231" width="103" height="12"/>
+				<textElement markup="styled">
+					<font fontName="SansSerif" size="7" isBold="true" pdfFontName="Helvetica-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[<style isBold='true'>Montant: (en chiffres)</style>]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="741d6545-cee0-4f68-8684-179918019db3" x="5" y="253" width="104" height="12"/>
+				<textElement markup="styled">
+					<font fontName="SansSerif" size="7" isBold="true" pdfFontName="Helvetica-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[<style isBold='true'>Montant: (en lettres)</style>]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="741d6545-cee0-4f68-8684-179918019db3" x="6" y="277" width="103" height="12"/>
+				<textElement markup="styled">
+					<font fontName="SansSerif" size="7" isBold="true" pdfFontName="Helvetica-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[<style isBold='true'>Contre-valeur en francs CFA:</style>]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="f4bbff66-f1b5-4594-94a9-632523d9aed0" x="6" y="317" width="272" height="61"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{exporterNameAddress}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="741d6545-cee0-4f68-8684-179918019db3" x="6" y="386" width="103" height="12"/>
+				<textElement markup="styled">
+					<font fontName="SansSerif" size="7" isBold="true" pdfFontName="Helvetica-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[<style isBold='true'>Banque Bénéficiaire:</style>]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="741d6545-cee0-4f68-8684-179918019db3" x="6" y="404" width="103" height="12"/>
+				<textElement markup="styled">
+					<font fontName="SansSerif" size="7" isBold="true" pdfFontName="Helvetica-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[<style isBold='true'>Pays Banque Bénéficiaire:</style>]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="e1f3203e-f896-4234-91e2-375a6279b6cd" mode="Transparent" x="418" y="5" width="138" height="9" forecolor="#404041"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="6" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{requestNo}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
+				<reportElement uuid="6f686366-5e61-4f52-bf49-bdb0a90713ba" x="418" y="24" width="138" height="9" forecolor="#404041"/>
+				<textElement verticalAlignment="Middle">
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{requestDate}.toDate()]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="498306ec-1e53-43a4-8856-5eb664d55bc3" x="109" y="42" width="84" height="9"/>
+				<textElement verticalAlignment="Middle">
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{bankCode}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="50b84ad6-8435-453e-8a28-51f5d21768db" x="109" y="5" width="84" height="9"/>
+				<textElement verticalAlignment="Middle">
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{registrationNumberBank}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
+				<reportElement uuid="05ef7c18-ba20-457f-95bd-e09c8af0ad7b" x="108" y="24" width="85" height="9"/>
+				<textElement verticalAlignment="Middle">
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{registrationDateBank}.toDate()]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="87efc1cf-9171-445a-9b86-1640ea24e82f" x="122" y="144" width="152" height="9"/>
+				<textElement verticalAlignment="Middle">
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{bankAccountNocreditedDebited}.trim()]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="b2649a58-7a5b-4717-941b-9f827907fcb1" x="108" y="179" width="438" height="9"/>
+				<textElement verticalAlignment="Middle">
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{operTypeName}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#,##0.00" isBlankWhenNull="true">
+				<reportElement uuid="8a45df8f-433f-4f6c-9b23-96fb9dff5ac5" x="109" y="232" width="447" height="9"/>
+				<textElement verticalAlignment="Middle">
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{amountMentionedCurrency}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="14db21ff-94ec-46f9-aafe-0cda2c21e2e4" x="109" y="212" width="207" height="9"/>
+				<textElement verticalAlignment="Middle">
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{currencyCode}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="3299afee-d6f2-41bc-91cb-5da6d17d0e31" x="109" y="387" width="169" height="9"/>
+				<textElement verticalAlignment="Middle">
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{countryProvenanceDestinationCode}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="21276f19-2725-47c0-84c1-b309d4c5a24e" x="108" y="404" width="170" height="9"/>
+				<textElement verticalAlignment="Middle">
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{provenanceDestinationBank}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="b8e57d7b-7ff2-4127-830e-d5e4206a5065" x="108" y="253" width="448" height="24"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{enlettre}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="c4a4aedc-7539-48d0-b9a8-521c0ee82533" x="108" y="193" width="438" height="12"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{piecejointe}.toLowerCase()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="01f65457-689c-4f9d-8e7a-c71c173957b7" x="0" y="426" width="556" height="7"/>
+				<box>
+					<leftPen lineWidth="0.25" lineColor="#6D6E70"/>
+					<bottomPen lineWidth="1.0" lineColor="#6D6E70"/>
+					<rightPen lineWidth="0.25" lineColor="#6D6E70"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[Static text]]></text>
+			</staticText>
+		</band>
+		<band height="10">
+			<subreport isUsingCache="false">
+				<reportElement uuid="63759bac-ad79-4662-aa67-8a1acd2f0afb" x="-1" y="0" width="557" height="10"/>
+				<subreportParameter name="requestType">
+					<subreportParameterExpression><![CDATA[$F{requestType}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($P{executions})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{EXECUTIONS_SUBREPORT}]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+	<lastPageFooter>
+		<band height="200">
+			<staticText>
+				<reportElement uuid="9c4097a5-195b-40d7-b7f8-39286ecede51" x="278" y="82" width="278" height="98"/>
+				<box>
+					<topPen lineWidth="0.25" lineStyle="Solid" lineColor="#6D6E70"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#6D6E70"/>
+					<bottomPen lineWidth="0.25" lineStyle="Solid" lineColor="#6D6E70"/>
+					<rightPen lineWidth="0.25" lineStyle="Solid" lineColor="#6D6E70"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="2ecb6ec9-4a85-4069-ae92-d39545ad642d" x="0" y="82" width="278" height="98"/>
+				<box>
+					<topPen lineWidth="0.25" lineStyle="Solid" lineColor="#6D6E70"/>
+					<leftPen lineWidth="0.25" lineStyle="Solid" lineColor="#6D6E70"/>
+					<bottomPen lineWidth="0.25" lineStyle="Solid" lineColor="#6D6E70"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#6D6E70"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="4fd4ae9c-0e47-4a41-a8dc-457fc7499818" x="1" y="187" width="72" height="10"/>
+				<textElement>
+					<font fontName="SansSerif" size="7" isBold="true" pdfFontName="Helvetica-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Date Impression :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="0465316c-2dae-4a8d-879d-7a8af72bad2b" x="5" y="85" width="60" height="9"/>
+				<textElement>
+					<font fontName="SansSerif" size="7" isBold="true" pdfFontName="Helvetica-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Autorisé par:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="1e857839-2bce-4c3e-a99f-aaf22d060427" x="284" y="85" width="262" height="9"/>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif" size="7" isBold="true" pdfFontName="Helvetica-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Direction Générale du Trésor et de la Comptabilité Publique]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
+				<reportElement uuid="e871e6a9-50ca-4de9-bceb-642e509bf80f" x="65" y="188" width="100" height="10"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="7d720817-90cf-43cd-a9bd-6b8e442530fc" x="65" y="85" width="209" height="9"/>
+				<textElement>
+					<font fontName="SansSerif" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{authorizedBy}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="0465316c-2dae-4a8d-879d-7a8af72bad2b" x="5" y="135" width="14" height="9"/>
+				<textElement>
+					<font fontName="SansSerif" size="7" isBold="true" pdfFontName="Helvetica-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Le:]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
+				<reportElement uuid="7d720817-90cf-43cd-a9bd-6b8e442530fc" x="19" y="135" width="79" height="9"/>
+				<textElement>
+					<font fontName="SansSerif" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{approvalDate}.toDate()]]></textFieldExpression>
+			</textField>
+		</band>
+	</lastPageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>

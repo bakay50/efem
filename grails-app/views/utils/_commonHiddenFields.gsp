@@ -1,0 +1,2 @@
+<wf:hiddenField name="beanLoadBankUrl" value="${createLink( controller: 'rimm', action: 'bankDataLoad')}" />
+<wf:hiddenField name="beanLoadCountryUrl" value="${createLink( controller: 'rimm', action: 'countryDataLoad')}" />

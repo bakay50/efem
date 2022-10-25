@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="exchangeGoods" language="groovy" pageWidth="556" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="556" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="f7745653-566e-408e-93c9-97942f59ff07">
+	<property name="ireport.zoom" value="1.6528925619834876"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="basedOn" class="java.lang.String"/>
+	<parameter name="requestType" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="sh_code" class="java.lang.String"/>
+	<field name="gds_dsc" class="java.lang.String"/>
+	<field name="vit_wgt_net" class="java.lang.Number"/>
+	<field name="vit_stv" class="java.math.BigDecimal"/>
+	<field name="vit_cif" class="java.math.BigDecimal"/>
+	<columnHeader>
+		<band height="26">
+			<staticText>
+				<reportElement uuid="2a055e7d-173d-469a-bf0f-ab59bb7c3a5a" x="0" y="0" width="114" height="26"/>
+				<box leftPadding="2">
+					<topPen lineWidth="0.25" lineStyle="Solid" lineColor="#6D6E70"/>
+					<leftPen lineWidth="0.25" lineStyle="Solid" lineColor="#6D6E70"/>
+					<bottomPen lineWidth="0.25" lineStyle="Solid" lineColor="#6D6E70"/>
+					<rightPen lineWidth="0.25" lineStyle="Solid" lineColor="#6D6E70"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="7" isBold="true" pdfFontName="Helvetica-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[N° du tarif des douanes]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="b5f74232-098b-45f8-9d4f-f5062cdc4b26" x="114" y="0" width="227" height="26"/>
+				<box leftPadding="4">
+					<topPen lineWidth="0.25" lineStyle="Solid" lineColor="#6D6E70"/>
+					<leftPen lineWidth="0.25" lineStyle="Solid" lineColor="#6D6E70"/>
+					<bottomPen lineWidth="0.25" lineStyle="Solid" lineColor="#6D6E70"/>
+					<rightPen lineWidth="0.25" lineStyle="Solid" lineColor="#6D6E70"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="7" isBold="true" pdfFontName="Helvetica-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Spécification de la marchandise telle qu'elle figure sur la déclaration d'exportation]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="b5f74232-098b-45f8-9d4f-f5062cdc4b26" x="341" y="0" width="92" height="26"/>
+				<box leftPadding="4">
+					<topPen lineWidth="0.25" lineStyle="Solid" lineColor="#6D6E70"/>
+					<leftPen lineWidth="0.25" lineStyle="Solid" lineColor="#6D6E70"/>
+					<bottomPen lineWidth="0.25" lineStyle="Solid" lineColor="#6D6E70"/>
+					<rightPen lineWidth="0.25" lineStyle="Solid" lineColor="#6D6E70"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="7" isBold="true" pdfFontName="Helvetica-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Quantité exportée
+(Poids net en kgs)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="b5f74232-098b-45f8-9d4f-f5062cdc4b26" x="433" y="0" width="122" height="26"/>
+				<box leftPadding="4">
+					<topPen lineWidth="0.25" lineStyle="Solid" lineColor="#6D6E70"/>
+					<leftPen lineWidth="0.25" lineStyle="Solid" lineColor="#6D6E70"/>
+					<bottomPen lineWidth="0.25" lineStyle="Solid" lineColor="#6D6E70"/>
+					<rightPen lineWidth="0.25" lineStyle="Solid" lineColor="#6D6E70"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="7" isBold="true" pdfFontName="Helvetica-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Valeur déclarée en douane
+(en francs CFA)]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="9">
+			<staticText>
+				<reportElement uuid="b5f74232-098b-45f8-9d4f-f5062cdc4b26" x="0" y="0" width="114" height="9"/>
+				<box leftPadding="4">
+					<topPen lineWidth="0.25" lineStyle="Solid" lineColor="#6D6E70"/>
+					<leftPen lineWidth="0.25" lineStyle="Solid" lineColor="#6D6E70"/>
+					<bottomPen lineWidth="0.25" lineStyle="Solid" lineColor="#6D6E70"/>
+					<rightPen lineWidth="0.25" lineStyle="Solid" lineColor="#6D6E70"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="54dc1fdc-be96-4fda-af36-be3df89fcb21" x="433" y="0" width="122" height="9"/>
+				<box leftPadding="4">
+					<topPen lineWidth="0.25" lineStyle="Solid" lineColor="#6D6E70"/>
+					<leftPen lineWidth="0.25" lineStyle="Solid" lineColor="#6D6E70"/>
+					<bottomPen lineWidth="0.25" lineStyle="Solid" lineColor="#6D6E70"/>
+					<rightPen lineWidth="0.25" lineStyle="Solid" lineColor="#6D6E70"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="9bdeb9ef-20ee-4b99-9c59-1bd3e97af4eb" x="114" y="0" width="227" height="9"/>
+				<box leftPadding="4">
+					<topPen lineWidth="0.25" lineStyle="Solid" lineColor="#6D6E70"/>
+					<leftPen lineWidth="0.25" lineStyle="Solid" lineColor="#6D6E70"/>
+					<bottomPen lineWidth="0.25" lineStyle="Solid" lineColor="#6D6E70"/>
+					<rightPen lineWidth="0.25" lineStyle="Solid" lineColor="#6D6E70"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="83f81b46-7e24-4f00-a13e-4111a8f91917" x="2" y="0" width="112" height="9" forecolor="#404041"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sh_code}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="0fe76d6e-6d41-4a15-8ef7-08fd25abd34b" x="341" y="0" width="92" height="9"/>
+				<box leftPadding="4">
+					<topPen lineWidth="0.25" lineStyle="Solid" lineColor="#6D6E70"/>
+					<leftPen lineWidth="0.25" lineStyle="Solid" lineColor="#6D6E70"/>
+					<bottomPen lineWidth="0.25" lineStyle="Solid" lineColor="#6D6E70"/>
+					<rightPen lineWidth="0.25" lineStyle="Solid" lineColor="#6D6E70"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<textField pattern="#,##0" isBlankWhenNull="true">
+				<reportElement uuid="d52047b5-30fd-4e2d-bf6e-dde39e158758" x="387" y="0" width="44" height="8" forecolor="#404041"/>
+				<textElement textAlignment="Right">
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{vit_wgt_net}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="f8df662c-e193-4dc5-9049-1635103e80f0" x="117" y="0" width="213" height="9" forecolor="#404041"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{gds_dsc}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0" isBlankWhenNull="true">
+				<reportElement uuid="f8df662c-e193-4dc5-9049-1635103e80f0" x="445" y="0" width="108" height="8" forecolor="#404041"/>
+				<textElement textAlignment="Right">
+					<font size="6"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{vit_cif}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

@@ -1,0 +1,229 @@
+buildscript {
+    ext {
+        grailsVersion = project.grailsVersion
+        gradleWrapperVersion = project.gradleWrapperVersion
+    }
+    repositories {
+        mavenLocal()
+        maven {
+            name = 'wf-repo'
+            url = 'https://nexus.guce.gouv.ci/repository/maven-public/'
+            credentials {
+                username "$wfRepoUsername"
+                password "$wfRepoPassword"
+            }
+        }
+    }
+    dependencies {
+        classpath 'com.webbfontaine.gradle.plugins:publish:[1.1.0,1.2.0)'
+        classpath "org.grails:grails-gradle-plugin:$grailsVersion"
+        classpath "com.webbfontaine.gradle.plugins:grails-layout-asset-pipeline:[1.0.2,1.1.0)"
+        classpath "org.grails.plugins:hibernate5:${gormVersion-".RELEASE"}"
+        classpath "com.webbfontaine.grails.plugins:i18n-asset-pipeline-gradle:${i18nAssetVersion}"
+        classpath "com.webbfontaine.gradle.plugins:jasper-compiler:2.0.0"
+        classpath 'com.webbfontaine.gradle.plugins:checkstyle:[1.0.0,1.1.0)'
+    }
+}
+
+version "3.0.6.2"
+group "com.webbfontaine"
+repositories {
+    mavenLocal()
+    maven {
+        name = 'wf-repo'
+        url = 'https://nexus.guce.gouv.ci/repository/maven-public/'
+        credentials {
+            username wfRepoUsername
+            password wfRepoPassword
+        }
+    }
+}
+apply plugin: "com.webbfontaine.gradle.plugins.repository"
+apply plugin: "eclipse"
+apply plugin: "idea"
+apply plugin: "jacoco"
+apply plugin: "war"
+apply plugin: "org.grails.grails-web"
+apply plugin: "com.webbfontaine.gradle.plugins.grails-layout-asset-pipeline"
+apply plugin: "org.grails.plugins.i18n-asset-pipeline"
+apply plugin: "com.webbfontaine.gradle.plugins.jasper-compiler"
+apply plugin: "org.grails.grails-gsp"
+apply plugin: 'com.webbfontaine.gradle.plugins.checkstyle'
+
+ext {
+    grailsVersion = project.grailsVersion
+    gradleWrapperVersion = project.gradleWrapperVersion
+}
+
+dependencies {
+    compile "org.springframework.boot:spring-boot-starter-logging"
+    compile "org.springframework.boot:spring-boot-autoconfigure"
+    compile "org.grails:grails-core"
+    compile "org.springframework.boot:spring-boot-starter-actuator"
+    compile "org.springframework.boot:spring-boot-starter-tomcat"
+    compile "org.grails:grails-web-boot"
+    compile "org.grails:grails-logging"
+    compile "org.grails:grails-plugin-rest"
+    compile "org.grails:grails-plugin-databinding"
+    compile "org.grails:grails-plugin-services"
+    compile "org.grails:grails-plugin-url-mappings"
+    compile "org.grails:grails-plugin-interceptors"
+    compile "org.grails.plugins:cache"
+    compile "org.grails.plugins:async"
+    compile "org.grails.plugins:scaffolding"
+    compile "org.grails.plugins:events"
+    compile "org.grails.plugins:hibernate5"
+    compile "org.grails.plugins:gsp"
+    console "org.grails:grails-console"
+
+    compile "org.springframework.boot:spring-boot-starter-integration"
+    compile "org.springframework.boot:spring-boot-starter-amqp"
+
+    compile "com.google.guava:guava:20.0"
+    compile "org.grails:grails-datastore-gorm-async"
+    compile "org.grails:grails-datastore-rest-client:5.0.0.RC2"
+    compile "org.apache.httpcomponents:httpcore:4.4.8"
+    compile "org.apache.httpcomponents:httpclient:4.5.3"
+    provided "javax.servlet:javax.servlet-api:3.1.0"
+
+    compile "org.apache.httpcomponents:httpcore:4.4.9"
+    compile "org.apache.httpcomponents:httpclient:4.5.5"
+    compile "org.apache.commons:commons-compress:1.15"
+    compile 'com.ibm.icu:icu4j:63.1'
+    compile("com.webbfontaine:wf-common-file-validators:1.0.4")
+
+    for (m in ['client', 'shared-bean-guce','shared-bean-common']) {
+        compile("com.webbfontaine:wf-epayment-ci-${m}:[1.1.0,1.2.0]") {
+            exclude group: 'org.springframework'
+        }
+    }
+
+    ['core', 'ehcache'].each {
+        compile "org.hibernate:hibernate-${it}:5.1.5.Final"
+    }
+
+    switch(System.getProperty('os.name').toLowerCase().split()[0]) {
+        case 'windows':
+            runtime "com.oracle:ojdbc6:11.2.0.4"
+            break
+        case 'linux':
+            runtimeOnly "com.oracle.ojdbc:ojdbc8:19.3.0.0"
+            break
+        default:
+            throw new Exception('Unknown OS')
+    }
+    compile "org.hibernate:hibernate-validator"
+
+    profile "org.grails.profiles:web"
+    runtime "com.h2database:h2"
+    runtime "org.apache.tomcat:tomcat-jdbc"
+
+    compile "com.webbfontaine.grails.plugins:i18n-asset-pipeline-grails:3.0.0"
+    compile "org.grails.plugins:mail:2.0.0.RC6"
+    compile 'org.aspectj:aspectjweaver:1.9.6'
+    compile 'io.micrometer:micrometer-spring-legacy:1.3.2'
+    compile 'io.micrometer:micrometer-registry-prometheus:1.3.2'
+
+    def libs = ['grails-application': '[1.0.1,1.1.0)',
+                'grails-banner'     : '[1.0.0,1.1.0)'
+    ]
+
+    for (p in libs) {
+        compile("com.webbfontaine.grails.libs:wf-${p.key}:${p.value}")
+    }
+
+    def plugins = [
+            'bootstrap'       : '3.3.2.8',
+            'sw-layout-common': '3.3.2.28',
+            'rimm'            : '3.3.2.3',
+            'taglibs'         : '3.3.3.58',
+            'conversation'    : '3.3.1.1',
+            'utils'           : '3.3.4.8',
+            'security'        : '3.3.1.13',
+            'validation-rules': '3.3.2.2',
+            'workflow'        : '3.3.1.2',
+            'search'          : '3.3.3.9',
+            'sys-info'        : '3.3.1.0-RC3',
+            'gws'             : '3.0.0'
+    ]
+
+    for (p in plugins) {
+        compile("com.webbfontaine.grails.plugins:wf-${p.key}:${p.value}")
+    }
+
+    compile("com.webbfontaine.grails.plugins.ci:wf-rimm-views:3.3.0.8")
+    compile("com.webbfontaine.grails.plugins.ci:wf-sw-layout:3.3.2.42")
+
+    if (gradle.ext.has('sources')) {
+        gradle.ext.sources?.each { p ->
+            compile project(":${p}")
+        }
+    }
+    if (gradle.ext.has('sources_country')) {
+        gradle.ext.sources_country?.each { p ->
+            compile project(":${p}")
+        }
+    }
+
+    compile 'net.sf.jasperreports:jasperreports:6.2.1'
+    compile 'net.sf.jasperreports:jasperreports-fonts:6.0.0'
+    compile 'org.grails.plugins:jasper:2.1.0.RC1'
+
+    runtime "com.webbfontaine.fonts:wf-jasperreports-fonts:1.5.0"
+    jasperreports 'joda-time:joda-time:2.9.9'
+
+    runtime "com.bertramlabs.plugins:asset-pipeline-grails:2.14.6"
+
+    testCompile "org.grails:grails-gorm-testing-support:1.1.3"
+    testCompile "org.grails:grails-web-testing-support:1.1.3"
+    testCompile "org.grails.plugins:geb"
+    testCompile "org.grails:grails-plugin-testing"
+    testRuntime "org.seleniumhq.selenium:selenium-chrome-driver:3.6.0"
+    testRuntime "org.seleniumhq.selenium:selenium-firefox-driver:3.6.0"
+    testRuntime "org.seleniumhq.selenium:selenium-remote-driver:3.6.0"
+    testRuntime "org.seleniumhq.selenium:selenium-api:3.6.0"
+    testRuntime "org.seleniumhq.selenium:selenium-htmlunit-driver:2.47.1"
+    testRuntime "net.sourceforge.htmlunit:htmlunit:2.18"
+    testCompile "org.grails:grails-datastore-rest-client"
+    testCompile "org.grails:grails-test-mixins:3.3.0"
+}
+
+bootRun {
+    jvmArgs('-Dspring.output.ansi.enabled=always')
+    addResources = true
+}
+
+ext {
+    grails {
+        pathingJar = true
+    }
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = gradleWrapperVersion
+}
+
+assets {
+    minifyJs = true
+    minifyCss = true
+}
+
+war {
+    archiveName project.findProperty('warName') ? "${warName}.war" : "efem.${project.version}_${new Date().format('yyyy.MM.dd')}.war"
+}
+
+configurations.all {
+    resolutionStrategy.eachDependency { DependencyResolveDetails details ->
+        if (details.requested.group == 'org.slf4j' && details.requested.name == 'slf4j-api') {
+            details.useVersion '1.7.25'
+        }
+    }
+}
+
+test {
+    maxHeapSize = "2g"
+}
+
+integrationTest {
+    maxHeapSize = "2g"
+}

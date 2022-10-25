@@ -1,0 +1,59 @@
+/**
+*
+*
+*
+*= require wf-search/searchUtils
+*/
+
+.searchRes td {
+    white-space: nowrap !important;
+    overflow-wrap: break-word !important;
+}
+.searchRes th{
+    white-space: normal !important;
+    width: 3.125rem !important;
+    overflow-wrap: break-word !important;
+}
+
+.searchRes .actions-th {
+    width: 60px !important;
+    overflow-wrap: break-word !important;
+}
+
+#searchButtons .row > div > div{
+    width: 410px;
+}
+
+.export {
+    /*background-color: pink;*/
+    background: url("../images/background_export.jpg") repeat-x scroll center bottom #FFFFFF;
+    border: 1px solid #CCCCCC;
+    margin-top: 5px;
+    padding: 5px 0;
+    width: 100%;
+}
+
+.menuButton {
+    margin-right: 50px;
+    margin-left: 10px;
+}
+
+.menuContainer {
+    margin-left: 280px;
+}
+
+.menuButton a.csv {
+    background: url("../images/file-csv.png") no-repeat scroll left center rgba(0, 0, 0, 0)!important;
+    color: #333333;
+    padding-left: 25px;
+}
+.menuButton a.excel {
+    background: url("../images/file-xls.png") no-repeat scroll left center rgba(0, 0, 0, 0);
+    color: #333333;
+    padding-left: 25px;
+}
+.menuButton a.pdf {
+    background: url("../images/file-pdf.png") no-repeat scroll left center rgba(0, 0, 0, 0);
+    color: #333333;
+    padding-left: 25px;
+}

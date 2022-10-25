@@ -1,0 +1,50 @@
+.file-wrapper {
+    cursor: pointer;
+    display: inline-block;
+    overflow: hidden;
+    height: 28px;
+    position: relative;
+    width: auto;
+    float: left;
+}
+
+.file-wrapper .button {
+    background: #66AB63;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    color: #ffffff;
+    padding: 4px 18px;
+}
+
+.file-wrapper input {
+    cursor: pointer;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    filter: alpha(opacity=1);
+    -moz-opacity: 0.01;
+    opacity: 0.01;
+    font-size: 100px;
+}
+
+.att-error-container {
+    padding-left: 15px;
+}
+
+
+#attDocTable .actions-th {
+    width: 50px
+}
+
+.modal-attdoc-body {
+    height: 70px;
+}
+
+.errorContainer > ul, #attDocListErrors ul {
+    list-style: none !important;
+}

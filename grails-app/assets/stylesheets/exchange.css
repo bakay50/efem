@@ -1,0 +1,169 @@
+/*
+*= require attachment.css
+*/
+
+#operationButtonsSection {
+    float: right;
+}
+
+/*For layout override*/
+.jumbotron {
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+    margin-bottom: 30px;
+    color: inherit;
+    height: 40px;
+    background-color: #eeeeee;
+}
+
+.form_error {
+    color: #CC0000 !important;
+}
+
+.short-input {
+    width: 35px !important;
+}
+
+.medium-input {
+    width: 200px !important;
+}
+
+.upload_tvf {
+    padding-left: 50px;
+    padding-top: 5px;
+}
+
+#js_delCnfrmActiondlg {
+    background-color: #FFFFFF !important;
+    width: 400px;
+    height: 220px;
+    left: 35%;
+    top: 30%;
+    display: block;
+}
+
+#showTvfBtn {
+    margin-left: -20px;
+    margin-top: 5px;
+}
+
+table.tr.actions-th {
+    border-left-style: hidden;
+    border-top-style: hidden;
+    border-bottom-style: hidden;
+}
+
+.execIcon {
+    cursor: pointer;
+}
+
+.execIcon:hover {
+    text-decoration: none;
+}
+
+.readonly {
+    background: transparent;
+    background-color: transparent !important;
+    border: 0px transparent;
+    box-shadow: none;
+    pointer-events: none;
+}
+
+.centered {
+    vertical-align: middle !important;
+    text-align: center !important;
+}
+
+.exchangeMonetary {
+    text-align: right
+}
+
+#showSadBtn {
+    margin-left: -20px;
+    margin-top: 5px;
+}
+
+label {
+    display: inline-block;
+    max-width: none !important;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.load-disabled {
+    pointer-events: none;
+    opacity: 0.65;
+    cursor: not-allowed;
+}
+
+input[readonly] {
+    pointer-events: none;
+}
+
+@media (min-width: 1200px) {
+    label#tvfNumber-error.error {
+        padding-right: 300px;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    label#tvfNumber-error.error {
+        padding-right: 200px;
+    }
+}
+
+@media (min-width: 1200px) {
+    label#amountMentionedCurrency-error.error {
+        padding-left: 240px;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    label#amountMentionedCurrency-error.error {
+        padding-left: 195px;
+    }
+}
+
+.editTitle {
+    font-size: 10px;
+    margin-top: -10px !important;
+    height: 10px !important;
+    line-height: 10px !important;
+}
+
+.aboveFormLabel {
+    margin-bottom: 8px;
+    padding-top: 0px !important;
+}
+
+fieldset.fieldset-border {
+    border: 2px groove #333333 !important;
+    padding: 0 1.4em 1.4em 1.4em !important;
+    margin: 0 0 0 1.5em !important;
+    margin-bottom: 10px !important;
+    -webkit-box-shadow: 0px 0px 0px 0px #000;
+    /*box-shadow:  0px 0px 0px 0px #000;*/
+    width: 800px !important;
+}
+
+legend.legend-border {
+    font-size: 1.2em !important;
+    font-weight: bold !important;
+    text-align: left !important;
+    width: auto;
+    padding: 0 10px;
+    border-bottom: none;
+}
+
+.display-none {
+    display: none;
+}
+
+#sdClearanceOfficeName, #edSdClearanceOfficeName {
+    font-size: 0.65em;
+}
+#declarationSerial {
+    text-transform: uppercase;
+}

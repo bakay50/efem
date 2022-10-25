@@ -1,0 +1,39 @@
+
+.clearance-error {
+    clear: left;
+    margin-right: 0px;
+    margin-bottom: 2px;
+}
+.w-102 {
+    width: 102px;
+}
+.float-left {
+    float: left;
+}
+.display-none {
+    display: none;
+}
+.wf-text-align-center {
+    text-align: center;
+}
+.ml-5-important{
+    margin-left: 5px!important;
+}
+.view-repatriation, .restart-repatriation{
+    cursor: pointer;
+}
+
+#js_warnMsgDlg {
+    background-color: #FFFFFF !important;
+    width: 400px;
+    height: 120px;
+    left: 35%;
+    top: 30%;
+    display: block;
+}
+#js_warnMsgDlgFooter {
+    padding: 15px;
+    text-align: right;
+    border-top: none;
+    height: 10px;
+}

@@ -1,0 +1,12 @@
+/*
+*= require attachment.css
+*/
+
+.blockMessageStyle{
+    color: #777777;
+}
+.logMessageStyle{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width:540px;
+}

@@ -1,0 +1,698 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ECExchangeWithGoods" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isFloatColumnFooter="true">
+	<property name="ireport.zoom" value="2.3579476910000063"/>
+	<property name="ireport.x" value="417"/>
+	<property name="ireport.y" value="861"/>
+	<parameter name="GOODS_SUBREPORT" class="java.lang.Object"/>
+	<parameter name="TITLE" class="java.io.InputStream"/>
+	<parameter name="language" class="java.lang.String"/>
+	<parameter name="draft" class="java.io.InputStream"/>
+	<parameter name="sadGoods" class="java.util.Collection"/>
+	<parameter name="sadReferenceInvoice" class="java.lang.String"/>
+	<parameter name="sadReferenceDate" class="org.joda.time.LocalDate"/>
+	<parameter name="sadIncoterm" class="java.lang.String"/>
+	<parameter name="writeOfDate" class="org.joda.time.LocalDate"/>
+	<parameter name="executionDate" class="org.joda.time.LocalDate"/>
+	<parameter name="sadImporterNameAndAdrdress" class="java.lang.String"/>
+	<parameter name="invoiceNumber" class="java.lang.String"/>
+	<parameter name="requestNumber" class="java.lang.String"/>
+	<parameter name="STAMP" class="java.io.InputStream"/>
+	<field name="executions" class="java.util.Collection"/>
+	<field name="requestNo" class="java.lang.String"/>
+	<field name="requestDate" class="org.joda.time.LocalDate"/>
+	<field name="tvfNumber" class="java.lang.Integer"/>
+	<field name="tvfDate" class="org.joda.time.LocalDate"/>
+	<field name="clearanceOfficeCode" class="java.lang.String"/>
+	<field name="clearanceOfficeName" class="java.lang.String"/>
+	<field name="declarationSerial" class="java.lang.String"/>
+	<field name="declarationNumber" class="java.lang.String"/>
+	<field name="declarationDate" class="org.joda.time.LocalDate"/>
+	<field name="bankCode" class="java.lang.String"/>
+	<field name="bankName" class="java.lang.String"/>
+	<field name="registrationNumberBank" class="java.lang.String"/>
+	<field name="registrationDateBank" class="org.joda.time.LocalDate"/>
+	<field name="domiciliationBankCode" class="java.lang.String"/>
+	<field name="domiciliationDate" class="org.joda.time.LocalDate"/>
+	<field name="domiciliationNumber" class="java.lang.String"/>
+	<field name="operType" class="java.lang.String"/>
+	<field name="currencyCode" class="java.lang.String"/>
+	<field name="amountMentionedCurrency" class="java.math.BigDecimal"/>
+	<field name="bankAccountNocreditedDebited" class="java.lang.String"/>
+	<field name="countryProvenanceDestinationCode" class="java.lang.String"/>
+	<field name="provenanceDestinationBank" class="java.lang.String"/>
+	<field name="comments" class="java.lang.String"/>
+	<field name="declarantCode" class="java.lang.String"/>
+	<field name="declarantNameAddress" class="java.lang.String"/>
+	<field name="exporterNameAddress" class="java.lang.String"/>
+	<field name="importerNameAddress" class="java.lang.String"/>
+	<field name="importerCode" class="java.lang.String"/>
+	<field name="basedOn" class="java.lang.String"/>
+	<field name="requestType" class="java.lang.String"/>
+	<field name="operTypeName" class="java.lang.String"/>
+	<field name="authorizedBy" class="java.lang.String"/>
+	<field name="approvalDate" class="org.joda.time.LocalDate"/>
+	<field name="countryOfDestinationName" class="java.lang.String"/>
+	<field name="amountNationalCurrency" class="java.math.BigDecimal"/>
+	<field name="goodsValuesInXOF" class="java.math.BigDecimal"/>
+	<field name="exFeesPaidByExpInCIinXOF" class="java.math.BigDecimal"/>
+	<field name="exFeesPaidByExpInAbroadinXOF" class="java.math.BigDecimal"/>
+	<variable name="CURRENT_DATE" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="1" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="65" splitType="Stretch">
+			<image scaleImage="RealSize" hAlign="Left" isUsingCache="true" onErrorType="Blank">
+				<reportElement x="1" y="0" width="554" height="65"/>
+				<imageExpression><![CDATA[$P{TITLE}]]></imageExpression>
+			</image>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="2" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="104" splitType="Stretch">
+			<rectangle>
+				<reportElement mode="Transparent" x="0" y="57" width="555" height="30" backcolor="#FFFFFF"/>
+				<graphicElement>
+					<pen lineWidth="0.25" lineColor="#6D6E70"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement mode="Transparent" x="0" y="27" width="555" height="30" backcolor="#FFFFFF"/>
+				<graphicElement>
+					<pen lineWidth="0.25" lineColor="#6D6E70"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement x="0" y="87" width="555" height="17"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="10" isBold="true" pdfFontName="Helvetica-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[I - DESIGNATION DES MARCHANDISES]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement mode="Transparent" x="0" y="0" width="326" height="27" backcolor="#FFFFFF"/>
+				<graphicElement>
+					<pen lineWidth="0.25" lineColor="#6D6E70"/>
+				</graphicElement>
+			</rectangle>
+			<textField isBlankWhenNull="true">
+				<reportElement x="208" y="62" width="250" height="20"/>
+				<textElement>
+					<font size="7" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{importerNameAddress}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="6" y="30" width="117" height="17"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[Nom et adresse du déclarant : ]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement mode="Transparent" x="326" y="0" width="229" height="27" backcolor="#FFFFFF"/>
+				<graphicElement>
+					<pen lineWidth="0.25" lineColor="#6D6E70"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement x="6" y="6" width="236" height="18"/>
+				<textElement markup="styled">
+					<font fontName="SansSerif" size="9" isBold="true" pdfFontName="Helvetica-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[RELATIF A UNE EXPORTATION VERS]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="123" y="30" width="202" height="17"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{declarantNameAddress}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="386" y="4" width="88" height="9"/>
+				<textElement textAlignment="Center" markup="styled">
+					<font fontName="SansSerif" size="7" isBold="true" pdfFontName="Helvetica-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Pays de destination]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="6" y="62" width="201" height="20"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[Marchandises facturées ou expédiées en consignation à : ]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement mode="Transparent" x="355" y="14" width="138" height="9" forecolor="#404041"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="7" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{countryOfDestinationName}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="12">
+			<subreport>
+				<reportElement x="0" y="0" width="555" height="12"/>
+				<subreportParameter name="basedOn"/>
+				<subreportParameter name="requestType"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($P{sadGoods})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{GOODS_SUBREPORT}]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="181" splitType="Stretch">
+			<printWhenExpression><![CDATA[new Boolean($V{PAGE_NUMBER}.intValue()==1)]]></printWhenExpression>
+			<staticText>
+				<reportElement x="0" y="157" width="555" height="24"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25" lineStyle="Solid" lineColor="#6D6E70"/>
+					<leftPen lineWidth="0.25" lineStyle="Solid" lineColor="#6D6E70"/>
+					<bottomPen lineWidth="0.25" lineStyle="Solid" lineColor="#6D6E70"/>
+					<rightPen lineWidth="0.25" lineStyle="Solid" lineColor="#6D6E70"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="394" y="19" width="161" height="20"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" markup="styled">
+					<font fontName="SansSerif" size="7" isBold="false" pdfFontName="Helvetica-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[En devises
+(si le contrat est en devises)]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="394" y="54" width="161" height="18"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{sadIncoterm}]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement x="390" y="140" width="165" height="17"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle" markup="styled">
+					<font fontName="SansSerif" size="6" isBold="true" pdfFontName="Helvetica-Bold" isPdfEmbedded="true"/>
+					<paragraph rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{exFeesPaidByExpInAbroadinXOF} ? new java.text.DecimalFormat("#,##0.000").format($F{exFeesPaidByExpInAbroadinXOF}) : null]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="390" y="125" width="165" height="15"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+					<font fontName="SansSerif" size="7" isBold="false" pdfFontName="Helvetica-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[A l'étranger]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="227" y="19" width="167" height="20"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" markup="styled">
+					<font fontName="SansSerif" size="7" isBold="false" pdfFontName="Helvetica-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[En francs CFA
+(dans tous les cas)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="227" y="54" width="167" height="18"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font size="6"/>
+				</textElement>
+				<text><![CDATA[Sur la base d'un contrat
+(départ usine, FOB, CAF, etc.)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="19" width="227" height="35"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Middle" markup="styled">
+					<font fontName="SansSerif" size="7" isBold="false" pdfFontName="Helvetica-Bold" isPdfEmbedded="true"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[Le produit de l'exportation des marchandises désignées ci-dessus d'une valeur facturée de :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="19"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="10" isBold="true" pdfFontName="Helvetica-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[II - REGLEMENT FINANCIER DE L'EXPORTATION]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="227" y="72" width="328" height="34"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+					<font fontName="SansSerif" size="6" isBold="false" pdfFontName="Helvetica-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{exporterNameAddress}]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement x="227" y="140" width="163" height="17"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle" markup="styled">
+					<font fontName="SansSerif" size="6" isBold="true" pdfFontName="Helvetica-Bold" isPdfEmbedded="true"/>
+					<paragraph rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{exFeesPaidByExpInCIinXOF} ? new java.text.DecimalFormat("#,##0.000").format($F{exFeesPaidByExpInCIinXOF}) : null]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="72" width="227" height="34"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+					<font fontName="SansSerif" size="7" isBold="false" pdfFontName="Helvetica-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[ Doit être rapatrié, sous les peines de droit et dans les conditions fixées par le règlement des charges par :]]></text>
+			</staticText>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement x="394" y="39" width="161" height="15"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="6" isBold="true" pdfFontName="Helvetica-Bold"/>
+					<paragraph rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{amountMentionedCurrency} ? new java.text.DecimalFormat("#,##0.00").format($F{amountMentionedCurrency}) : null]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="54" width="96" height="18"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+					<font fontName="SansSerif" size="7" isBold="true" pdfFontName="Helvetica-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Facture N°]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="21" y="162" width="87" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[Nature de l'exportation : ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="227" y="106" width="328" height="19"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+					<font fontName="SansSerif" size="7" isBold="false" pdfFontName="Helvetica-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[FRAIS ACCESSOIRES PRIS EN CHARGE PAR L'EXPORTATEUR]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="106" width="96" height="51"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+					<font fontName="SansSerif" size="7" isBold="false" pdfFontName="Helvetica-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Elément de la facturation
+(en francs CFA)]]></text>
+			</staticText>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement x="227" y="39" width="167" height="15"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="6" isBold="true" pdfFontName="Helvetica-Bold"/>
+					<paragraph rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{amountNationalCurrency} ? new java.text.DecimalFormat("#,##0.00").format($F{amountNationalCurrency}) : null]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="109" y="162" width="216" height="15"/>
+				<textElement verticalAlignment="Middle">
+					<font size="6" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{operTypeName}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0" isBlankWhenNull="true">
+				<reportElement x="96" y="140" width="131" height="17"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle" markup="styled">
+					<font fontName="SansSerif" size="6" isBold="true" pdfFontName="Helvetica-Bold" isPdfEmbedded="true"/>
+					<paragraph rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{goodsValuesInXOF} ? new java.text.DecimalFormat("#,##0.000").format($F{goodsValuesInXOF}) : null]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="227" y="125" width="163" height="15"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+					<font fontName="SansSerif" size="7" isBold="false" pdfFontName="Helvetica-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[En Côte d'Ivoire]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="96" y="106" width="131" height="34"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+					<font fontName="SansSerif" size="7" isBold="false" pdfFontName="Helvetica-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Valeur des marchandises
+(départ - usine)]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="96" y="54" width="131" height="18"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+					<font fontName="SansSerif" size="6" isBold="false" pdfFontName="Helvetica-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{invoiceNumber}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="169" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="62" width="555" height="90">
+					<printWhenExpression><![CDATA[new Boolean($V{PAGE_NUMBER}.intValue()==1)]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25" lineStyle="Solid" lineColor="#6D6E70"/>
+					<leftPen lineWidth="0.25" lineStyle="Solid" lineColor="#6D6E70"/>
+					<bottomPen lineWidth="0.25" lineStyle="Solid" lineColor="#6D6E70"/>
+					<rightPen lineWidth="0.25" lineStyle="Solid" lineColor="#6D6E70"/>
+				</box>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="474" y="154" width="79" height="13"/>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</rectangle>
+			<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
+				<reportElement x="74" y="156" width="100" height="10"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="2" y="156" width="72" height="10"/>
+				<textElement>
+					<font fontName="SansSerif" size="7" isBold="true" pdfFontName="Helvetica-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Date Impression :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="206" y="155" width="80" height="10"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" /"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="286" y="155" width="40" height="10"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="474" y="155" width="79" height="13"/>
+				<textElement textAlignment="Center">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{requestNumber}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="6" y="91" width="83" height="9">
+					<printWhenExpression><![CDATA[new Boolean($V{PAGE_NUMBER}.intValue()==1)]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="SansSerif" size="7" isBold="false" pdfFontName="Helvetica-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Intermédiare agrée : ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="6" y="71" width="131" height="9">
+					<printWhenExpression><![CDATA[new Boolean($V{PAGE_NUMBER}.intValue()==1)]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="SansSerif" size="7" isBold="false" pdfFontName="Helvetica-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[N° du dossier de domiciliation : ]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="140" y="71" width="112" height="9">
+					<printWhenExpression><![CDATA[new Boolean($V{PAGE_NUMBER}.intValue()==1)]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="SansSerif" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{registrationNumberBank}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="6" y="112" width="93" height="9">
+					<printWhenExpression><![CDATA[new Boolean($V{PAGE_NUMBER}.intValue()==1)]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="SansSerif" size="7" isBold="true" pdfFontName="Helvetica-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[A APURER AVANT LE :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="7" y="138" width="49" height="9">
+					<printWhenExpression><![CDATA[new Boolean($V{PAGE_NUMBER}.intValue()==1)]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="SansSerif" size="7" isBold="true" pdfFontName="Helvetica-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[APURER LE :]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="90" y="91" width="97" height="9">
+					<printWhenExpression><![CDATA[new Boolean($V{PAGE_NUMBER}.intValue()==1)]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="SansSerif" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{bankName}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
+				<reportElement x="100" y="112" width="97" height="9">
+					<printWhenExpression><![CDATA[new Boolean($V{PAGE_NUMBER}.intValue()==1)]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="SansSerif" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{writeOfDate}.toDate()]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
+				<reportElement x="57" y="138" width="60" height="9">
+					<printWhenExpression><![CDATA[new Boolean($V{PAGE_NUMBER}.intValue()==1)]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="SansSerif" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{executionDate}.toDate()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="348" y="71" width="44" height="9">
+					<printWhenExpression><![CDATA[new Boolean($V{PAGE_NUMBER}.intValue()==1)]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="SansSerif" size="7" isBold="false" pdfFontName="Helvetica-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Ouvert le : ]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
+				<reportElement x="393" y="71" width="112" height="9">
+					<printWhenExpression><![CDATA[new Boolean($V{PAGE_NUMBER}.intValue()==1)]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="SansSerif" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{registrationDateBank}.toDate()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="0" width="275" height="62">
+					<printWhenExpression><![CDATA[new Boolean($V{PAGE_NUMBER}.intValue()==1)]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25" lineStyle="Solid" lineColor="#6D6E70"/>
+					<leftPen lineWidth="0.25" lineStyle="Solid" lineColor="#6D6E70"/>
+					<bottomPen lineWidth="0.25" lineStyle="Solid" lineColor="#6D6E70"/>
+					<rightPen lineWidth="0.25" lineStyle="Solid" lineColor="#6D6E70"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="275" y="0" width="280" height="62">
+					<printWhenExpression><![CDATA[new Boolean($V{PAGE_NUMBER}.intValue()==1)]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25" lineStyle="Solid" lineColor="#6D6E70"/>
+					<leftPen lineWidth="0.25" lineStyle="Solid" lineColor="#6D6E70"/>
+					<bottomPen lineWidth="0.25" lineStyle="Solid" lineColor="#6D6E70"/>
+					<rightPen lineWidth="0.25" lineStyle="Solid" lineColor="#6D6E70"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="2" width="273" height="58">
+					<printWhenExpression><![CDATA[new Boolean($V{PAGE_NUMBER}.intValue()==1)]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Justified">
+					<font fontName="SansSerif" size="7" isBold="false" pdfFontName="Helvetica-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Je sousigné, certifie sincères et véritables les énonciations portées sur la présente formule.
+Je m'engage sous les pénalités prévues par la réglementation en vigueur, à rapatrier dans le délai d'un (1) mois à compter de la date d'exigibilité du paiement, l'intégralité des sommes provenant de l'exportation visée ci-dessous.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="280" y="4" width="124" height="24">
+					<printWhenExpression><![CDATA[new Boolean($V{PAGE_NUMBER}.intValue()==1)]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Justified" verticalAlignment="Top">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Direction Générale du trésor et de la Comptabilité Publique ]]></text>
+			</staticText>
+			<image scaleImage="RealSize" hAlign="Left" isUsingCache="true" onErrorType="Blank">
+				<reportElement x="466" y="1" width="62" height="38"/>
+				<imageExpression><![CDATA[$P{STAMP}]]></imageExpression>
+			</image>
+		</band>
+	</pageFooter>
+</jasperReport>

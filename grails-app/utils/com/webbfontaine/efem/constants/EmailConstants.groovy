@@ -1,0 +1,71 @@
+package com.webbfontaine.efem.constants
+
+/**
+ * Copyright 2019 Webb Fontaine
+ * Developer: John Paul Abiog
+ * Date: 10/11/19
+ * This software is the proprietary information of Webb Fontaine.
+ * Its use is subject to License terms.
+ */
+
+class EmailConstants {
+    static String DEFAULT_EMAIL_FROM = "no-reply-qa@guce.gouv.ci"
+    static List DEFAULT_EMAIL_TOADMINS = ['alex.zeboua@guce.gouv.ci']
+    static String DEFAULT_EMAIL_TOADMINS_SUBJECT = "INFO: SERVEUR DE NOTIFICATION"
+    static String DEFAULT_EMAIL_TOADMINS_BODY = "Le serveur de notification est DOWN."
+
+    static String REQUESTED_MAIL_TO_APPLICANT = "RDA"
+    static String REQUESTED_MAIL_TO_BANK = "RDBA"
+    static String REQUESTED_MAIL_TO_DOMICIALIATION_BANK = "RDBDA"
+    static String REQUESTED_MAIL_TO_GOV = "RGOA"
+    static String REJECTED_MAIL_TO_APPLICANT = "RJBAA"
+    static String REJECTED_MAIL_TO_DECLARANT = "RJBAAD"
+    static String REJECTED_BANK_MAIL_TO_DECLARANT = "RJBAD"
+    static String REJECTED_GOV_MAIL_TO_DECLARANT = "RJGOD"
+    static String QUERIED_MAIL_TO_APPLICANT = "QGBAA"
+    static String QUERIED_MAIL_TO_DECLARANT = "QGBAD"
+    static String QUERIED_GOV_MAIL_TO_APPLICANT = "QGOA"
+    static String QUERIED_BANK_MAIL_TO_APPLICANT = "QBAA"
+    static String QUERIED_BANK_MAIL_TO_DECLARANT = "QBAD"
+    static String QUERIED_GOV_MAIL_TO_DECLARANT = "QGOD"
+    static String CANCELLED_MAIL_TO_APPLICANT = "CAAA"
+    static String CANCELLED_QUERY_MAIL_TO_APPLICANT = "CAQUAA"
+    static String CANCELLED_APPROVED_MAIL_TO_APPLICANT = "CAAPAA"
+    static String CANCELLED_MAIL_TO_GOV = "CAGOVA"
+    static String CANCELLED_MAIL_TO_BANK = "CABAA"
+    static String CANCELLED_BANK_MAIL_TO_APPLICANT = "CBAA"
+    static String CANCELLED_BANK_MAIL_TO_DECLARANT = "CBAD"
+    static String CANCELLED_GOV_MAIL_TO_DECLARANT = "CGOD"
+    static String PARTIALLY_APPROVED_BANK_MAIL_TO_APPLICANT = "PABAA"
+    static String PARTIALLY_APPROVED_BANK_MAIL_TO_GOV = "PAGOA"
+    static String PARTIALLY_APPROVED_BANK_MAIL_TO_DECLARANT = "PABAD"
+    static String APPROVED_GOV_MAIL_TO_APPLICANT = "AGOA"
+    static String APPROVED_GOV_MAIL_TO_BANK = "AGOBA"
+    static String APPROVED_BANK_MAIL_TO_GOV = "ABAGO"
+    static String APPROVED_GOV_MAIL_TO_DECLARNT = "AGOD"
+    static String UPDATE_MAIL_TO_APPLICANT = "UBAA"
+    static String UPDATE_MAIL_TO_DECLARANT = "UBAD"
+    static String UPDATE_APPROVED_OR_UPDATE_EXECUTED_MAIL_TO_BANK = "UAEBANK"
+    static String UPDATE_TVF_MAIL_TO_APPLICANT = "UTBAA"
+    static String UPDATE_TVF_MAIL_TO_DECLARANT = "UTBAD"
+    static String UPDATE_SAD_MAIL_TO_APPLICANT = "USBAA"
+    static String UPDATE_SAD_MAIL_TO_DECLARANT = "USBAD"
+    static String REQUESTED_ORDER_MAIL_TO_BANK = "REQBANK"
+    static String REQ_VALIDATED_ORDER_MAIL_TO_IMPORTER = "REQVALIMP"
+    static String VALIDATED_ORDER_MAIL_TO_IMPORTER = "VALIMP"
+    static String QUERIED_ORDER_MAIL_TO_IMPORTER = "QUEIMP"
+    static String CANCELLED_ORDER_MAIL_TO_BANK = "CBANK"
+    static String CANCELLED_ORDER_MAIL_TO_IMPORTER = "CIMP"
+    static String UPDATE_ORDER_VALIDATED_MAIL_TO_BANK = "UVBANK"
+    static String UPDATE_ORDER_VALIDATED_MAIL_TO_IMPORTER = "UVIMP"
+
+    static String DECLARE_REPATRIATION_MAIL_TO_BANK = "DRB"
+    static String CONFIRM_REPATRIATION_MAIL_TO_EXPORTER = "CREXP"
+    static String QUERY_REPATRIATION_MAIL_TO_EXPORTER = "QREXP"
+    static String CONFIRM_REPATRIATION_MAIL_TO_DOMICILIATION_BANK = "CRDB"
+    static String CANCEL_REPATRIATION_MAIL_TO_EXPORTER = "CAREXP"
+    static String UPDATE_REPATRIATION_MAIL_TO_EXPORTER = "UPREXP"
+    static String UPDATE_REPATRIATION_MAIL_TO_DOMICILIATION_BANK = "UPRDOBA"
+    static String UPDATE_REPATRIATION_MAIL_TO_BANK = "UPRBA"
+    static String UPDATE_CLEARANCE_REPATRIATION_MAIL_TO_BANK = "UPCLBA"
+}

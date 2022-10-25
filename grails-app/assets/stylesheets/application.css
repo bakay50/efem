@@ -1,0 +1,16 @@
+/*
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS file within this directory can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the top of the
+* compiled file, but it's generally better to create a new file per style scope.
+*
+*= require layout
+*= require auto
+*= require search-core.css
+*= require searchResult-override
+*= require toastr.css
+*= require wf-sys-info
+*/

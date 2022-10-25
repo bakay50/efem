@@ -1,0 +1,48 @@
+
+table.searchRes > thead > tr > th {
+    overflow: hidden !important;
+}
+
+.column-selector #cog {
+    color : black;
+}
+
+.column-selector > a > span {
+    font-size: 15px;
+}
+
+.column-selector > ul {
+    margin-top: 0;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12)
+}
+
+.column-selector > ul > div {
+    width: 200px;
+}
+
+.column-selector > ul > div > table {
+    width: 100%;
+}
+
+.column-selector > ul > div > table > tbody > tr > td {
+    border-bottom: 1px solid #ddd;
+}
+
+.column-selector > ul > div >table > tbody > tr > td:first-child {
+    padding: 1rem 1.2rem;
+}
+
+.column-selector > ul > div > table > tbody > tr:last-child > td {
+    border-bottom: none;
+}
+
+#columnsToChoose {
+    max-height: 300px;
+    max-width: 300px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+table.sortable thead {
+    cursor: pointer;
+    color:green;
+}

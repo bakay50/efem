@@ -1,0 +1,37 @@
+rootProject.name = 'efem'
+//Get home of Grails3 plugins
+def plugins = System.getenv()['GRAILS3_PLUGINS_HOME']
+def plugins_country = System.getenv()['GRAILS3_PLUGINS_CI_HOME']
+if(plugins && properties.sources) {
+    //For each plugin check that folder exists
+    def list  = properties.sources.split(',').findAll({ p ->
+        new File(plugins, p).exists()
+    })
+
+    //Set the new list to properties to be used in build.gradle
+    gradle.ext.sources=list
+
+    println("Using plugins from source : $list")
+    //Add subproject
+    list.each { p ->
+        include p
+        project(":${p}").projectDir = new File(plugins, p)
+    }
+}
+if(plugins_country && properties.sources_country) {
+    //For each plugin check that folder exists
+    def list  = properties.sources_country.split(',').findAll({ p ->
+        new File(plugins_country, p).exists()
+    })
+
+    //Set the new list to properties to be used in build.gradle
+    gradle.ext.sources_country=list
+
+    println("Using plugins from source : $list")
+    //Add subproject
+    list.each { p ->
+        include p
+        project(":${p}").projectDir = new File(plugins_country, p)
+    }
+}
+
