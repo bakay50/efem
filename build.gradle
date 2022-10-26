@@ -220,6 +220,10 @@ configurations.all {
     }
 }
 
+checkstyle {
+    sourceSets = []
+}
+
 test {
     maxHeapSize = "2g"
 }
