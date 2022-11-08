@@ -236,7 +236,7 @@ class RepatriationServiceSpec extends Specification implements ServiceUnitTest<R
         exchange.save(flush: true, failOnError: true)
     }
 
-    @Unroll
+    @Ignore
     void "Test updateEcDeleted"() {
         given:
         List<ClearanceOfDom> clearancesBeforeDelete = domiciliationsBeforeDelete()
