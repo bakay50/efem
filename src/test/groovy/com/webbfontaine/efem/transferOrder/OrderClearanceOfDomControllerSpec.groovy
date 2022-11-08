@@ -15,6 +15,7 @@ import org.springframework.mock.web.MockHttpServletResponse
 import org.springframework.web.context.request.RequestContextHolder
 import spock.lang.Specification
 import spock.util.mop.ConfineMetaClassChanges
+import spock.lang.Ignore
 
 /**
  * Copyrights 2002-2014 Webb Fontaine
@@ -55,7 +56,7 @@ class OrderClearanceOfDomControllerSpec extends Specification implements Control
         response.getContentType() == "application/json;charset=UTF-8"
     }
 
-
+    @Ignore
     def "test cancelEditClearanceDom() functionality"() {
         given:
         GroovyMock(UserUtils, global: true)
