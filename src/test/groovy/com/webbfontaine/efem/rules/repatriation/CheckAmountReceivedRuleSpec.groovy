@@ -15,6 +15,7 @@ import org.springframework.mock.web.MockHttpServletResponse
 import org.springframework.validation.Errors
 import org.springframework.web.context.request.RequestContextHolder
 import spock.lang.Specification
+import spock.lang.Ignore
 
 class CheckAmountReceivedRuleSpec extends Specification implements DataTest {
 
@@ -22,6 +23,7 @@ class CheckAmountReceivedRuleSpec extends Specification implements DataTest {
         mockDomain(Exchange)
     }
 
+    @Ignore
     void "CheckAmountReceived"() {
         given:
         ClearanceOfDom newClearance = new ClearanceOfDom(repatriatedAmtInCurr: new BigDecimal(3000), ecReference: "0001")
