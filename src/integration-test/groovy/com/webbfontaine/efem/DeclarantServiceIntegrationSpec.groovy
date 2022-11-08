@@ -5,6 +5,7 @@ import grails.gorm.transactions.Rollback
 import grails.gorm.transactions.Transactional
 import grails.testing.mixin.integration.Integration
 import spock.lang.Specification
+import spock.lang.Ignore
 
 @Rollback
 @Integration
@@ -19,6 +20,7 @@ class DeclarantServiceIntegrationSpec extends Specification {
         }
     }
 
+    @Ignore
     void "test setDeclarantDetails "() {
         given:
 
