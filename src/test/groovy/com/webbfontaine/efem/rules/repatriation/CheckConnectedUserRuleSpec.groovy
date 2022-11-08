@@ -9,6 +9,8 @@ import grails.testing.gorm.DataTest
 import org.springframework.validation.Errors
 import spock.lang.Specification
 import spock.lang.Unroll
+import spock.lang.Ignore
+
 
 class CheckConnectedUserRuleSpec extends Specification implements  DataTest {
 
@@ -16,7 +18,8 @@ class CheckConnectedUserRuleSpec extends Specification implements  DataTest {
         mockDomain(Repatriation)
     }
 
-    @Unroll
+    //@Unroll
+    @Ignore
     void "test for ExecutionValidationRule should expected error message"() {
         given:
         GroovyMock(UserUtils, global: true)
