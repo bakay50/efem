@@ -16,6 +16,7 @@ import org.springframework.validation.Errors
 import spock.lang.Specification
 import spock.lang.Unroll
 import static com.webbfontaine.efem.constants.CurrencyTransferRequestType.getDOC_SWIFT_MESSAGE
+import spock.lang.Ignore
 
 class ValidationCurrencyTransferRuleSpec extends Specification implements  DataTest {
 
@@ -23,7 +24,8 @@ class ValidationCurrencyTransferRuleSpec extends Specification implements  DataT
         mockDomain(CurrencyTransfer)
     }
 
-    @Unroll
+    //@Unroll
+    @Ignore
     void "test for ExecutionValidationRule should expected error message"() {
         given:
         GroovyMock(WebRequestUtils, global: true)
