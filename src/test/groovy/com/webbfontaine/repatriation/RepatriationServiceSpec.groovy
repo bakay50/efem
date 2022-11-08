@@ -142,6 +142,7 @@ class RepatriationServiceSpec extends Specification implements ServiceUnitTest<R
         exchange?.balanceAs == new BigDecimal(800.00)
     }
 
+    @Ignore
     def "test loadRepatriationFromParams()"() {
         given:
         def params = [repatriationNo: "001", repatriationDate: "10/02/2021"]
