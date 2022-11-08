@@ -8,6 +8,7 @@ import grails.test.mixin.integration.Integration
 import grails.transaction.Rollback
 import org.joda.time.LocalDateTime
 import spock.lang.Specification
+import spock.lang.Ignore
 
 /**
  * Copyright 2019 Webb Fontaine
@@ -23,6 +24,7 @@ class RepatriationSearchServiceIntegrationSpec extends Specification {
 
     RepatriationSearchService repatriationSearchService
 
+    @Ignore
     void "test getSearchResults "() {
         given:
         createRepatriation()
