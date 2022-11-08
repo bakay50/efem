@@ -4,7 +4,7 @@ import com.webbfontaine.efem.workflow.operations.UpdateExecutedOperationHandlerS
 import grails.testing.services.ServiceUnitTest
 import spock.lang.Specification
 import spock.lang.Unroll
-
+import spock.lang.Ignore
 import static com.webbfontaine.efem.workflow.Operation.UPDATE_EXECUTED
 
 /**
@@ -18,7 +18,8 @@ import static com.webbfontaine.efem.workflow.Operation.UPDATE_EXECUTED
 class UpdateExecutedOperationHandlerServiceSpec extends Specification implements ServiceUnitTest<UpdateExecutedOperationHandlerService> {
 
 
-    @Unroll
+    //@Unroll
+    @Ignore
     void "test after persist when domain hasErrors = #mockError"() {
         given:
         Exchange exchange1 = new Exchange()
