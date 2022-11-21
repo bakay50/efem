@@ -17,6 +17,7 @@ import static com.webbfontaine.efem.workflow.Operation.UPDATE_CLEARANCE
 import static com.webbfontaine.efem.workflow.Operation.DELETE_STORED
 import static com.webbfontaine.efem.workflow.Operation.UPDATE_CONFIRMED
 
+
 /**
  * Copyrights 2002-2014 Webb Fontaine
  * Developer: Yacouba SYLLA
