@@ -226,9 +226,9 @@ tasks.withType(Checkstyle) {
 }
 
 test {
-    maxHeapSize = "3g"
+    maxHeapSize = "2g"
 }
 
 integrationTest {
-    maxHeapSize = "3g"
+    maxHeapSize = "2g"
 }
